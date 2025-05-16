@@ -8,9 +8,7 @@ public class AIPawn : MonoBehaviour
     private Vector3? m_Destination;
     private Vector3? Destination => m_Destination;
 
-    private void Start() {
-        SetDestination(new Vector3(4.5f, 0, 0));
-    }
+    
     private void Update() {
         if (m_Destination.HasValue)
         {

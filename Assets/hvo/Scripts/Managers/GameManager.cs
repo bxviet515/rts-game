@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : SingletonManager<GameManager>
 {
+    public Unit ActiveUnit;
     private Vector2 m_InitialTouchPosition;
     private void Update()
     {
@@ -22,6 +23,11 @@ public class GameManager : SingletonManager<GameManager>
     }
     private void DetechClick(Vector2 inputPosition)
     {
-        Debug.Log(inputPosition);
+        Vector2 worldPoint = Camera.main.ScreenToWorldPoint(inputPosition);
+        HandleClickOnGround(worldPoint);
+    }
+    private void HandleClickOnGround(Vector2 worldPoint)
+    {
+        ActiveUnit.MoveTo(worldPoint);
     }
 }
