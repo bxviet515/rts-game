@@ -626,7 +626,7 @@ Tilemap:
       - {fileID: -1167822156, guid: 8b6bb3d65c730e046a8d7d0bed35fe56, type: 3}
       - {fileID: -992440913, guid: 8b6bb3d65c730e046a8d7d0bed35fe56, type: 3}
       - {fileID: -1998619225, guid: 8b6bb3d65c730e046a8d7d0bed35fe56, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 5, y: -11, z: 0}
@@ -752,7 +752,7 @@ Tilemap:
       - {fileID: -1910491291, guid: 3d716f96cedbfec4c9fe9b12d4da7c20, type: 3}
       - {fileID: -893125274, guid: 3d716f96cedbfec4c9fe9b12d4da7c20, type: 3}
       - {fileID: -163247931, guid: 3d716f96cedbfec4c9fe9b12d4da7c20, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -14, y: -4, z: 0}
@@ -4144,7 +4144,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: c24875670c5d57f4c86ecf487be6d102, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6248,7 +6248,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -6, y: -8, z: 0}
@@ -6514,7 +6514,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: -6, z: 0}
@@ -6584,7 +6584,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -4, z: 0}
@@ -6640,7 +6640,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -2, z: 0}
@@ -6682,7 +6682,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: 0, z: 0}
@@ -6724,7 +6724,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: 1, z: 0}
@@ -6808,7 +6808,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: 4, z: 0}
@@ -7088,7 +7088,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 8, y: 5, z: 0}
@@ -15842,7 +15842,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: c24875670c5d57f4c86ecf487be6d102, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
