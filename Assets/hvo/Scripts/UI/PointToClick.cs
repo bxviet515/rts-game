@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PointToClick : MonoBehaviour
@@ -7,6 +5,16 @@ public class PointToClick : MonoBehaviour
     [SerializeField] private float m_Duration = 1f;
     [SerializeField] private SpriteRenderer m_SpriteRenderer;
     private float m_Timer;
+    private PointToClickPool m_Pool;
+
+    public void Init(PointToClickPool pool)
+    {
+        m_Pool = pool;
+        m_Timer = 0;
+        m_SpriteRenderer.color = Color.white;
+        gameObject.SetActive(true);
+    }
+
     private void Update()
     {
         m_Timer += Time.deltaTime;
@@ -17,7 +25,7 @@ public class PointToClick : MonoBehaviour
         }
         if (m_Timer >= m_Duration)
         {
-            Destroy(gameObject);
+            m_Pool.ReturnToPool(this);
         }
     }
 }

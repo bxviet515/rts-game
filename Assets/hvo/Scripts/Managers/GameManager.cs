@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameManager : SingletonManager<GameManager>
 {
     [Header("UI")]
-    [SerializeField] private PointToClick m_PointToClickPrefab;
+    [SerializeField] private PointToClickPool m_PointToClickPool;
 
     public Unit ActiveUnit;
     private Vector2 m_InitialTouchPosition;
@@ -75,6 +75,8 @@ public class GameManager : SingletonManager<GameManager>
     }
     private void DisplayClickEffect(Vector2 worldPoint)
     {
-        Instantiate(m_PointToClickPrefab, (Vector3)worldPoint, Quaternion.identity);
+        PointToClick clickEffect = m_PointToClickPool.Get();
+        clickEffect.transform.position = worldPoint;
+        clickEffect.Init(m_PointToClickPool);
     }
 }
