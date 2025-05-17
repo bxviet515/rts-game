@@ -36,7 +36,7 @@ public class GameManager : SingletonManager<GameManager>
         else
         {
             HandleClickOnGround(worldPoint);
-            
+
         }
     }
 
@@ -52,11 +52,12 @@ public class GameManager : SingletonManager<GameManager>
     }
     private void HandleClickOnGround(Vector2 worldPoint)
     {
-        DisplayClickEffect(worldPoint);
-        if (HasActiveUnit)
+
+        if (HasActiveUnit && isHumanoid(ActiveUnit))
         {
+            DisplayClickEffect(worldPoint);
             ActiveUnit.MoveTo(worldPoint);
-            
+
         }
     }
 
@@ -78,5 +79,10 @@ public class GameManager : SingletonManager<GameManager>
         PointToClick clickEffect = m_PointToClickPool.Get();
         clickEffect.transform.position = worldPoint;
         clickEffect.Init(m_PointToClickPool);
+    }
+
+    private bool isHumanoid(Unit unit)
+    {
+        return unit is HumanoidUnit;
     }
 }
