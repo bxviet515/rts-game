@@ -4,13 +4,14 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    [SerializeField] private Material m_OutlineMaterial;
+    
     public bool isMoving;
     public bool isTargeted;
     protected Animator m_Animator;
     protected AIPawn m_AIPawn;
     protected SpriteRenderer m_SpriteRenderer;
     protected Material m_OriginalMaterial;
+    protected Material m_HightlightMaterial;
     protected void Awake()
     {
         if (TryGetComponent<Animator>(out var animator))
@@ -24,6 +25,7 @@ public abstract class Unit : MonoBehaviour
 
         m_SpriteRenderer = GetComponent<SpriteRenderer>();
         m_OriginalMaterial = m_SpriteRenderer.material;
+        m_HightlightMaterial = Resources.Load<Material>("Materials/Outline");
 
     }
     public void MoveTo(Vector3 destination)
@@ -46,7 +48,7 @@ public abstract class Unit : MonoBehaviour
 
     private void Highlight()
     {
-        m_SpriteRenderer.material = m_OutlineMaterial;
+        m_SpriteRenderer.material = m_HightlightMaterial;
     }
     private void UnHighlight()
     {
