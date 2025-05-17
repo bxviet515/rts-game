@@ -6,6 +6,7 @@ public class GameManager : SingletonManager<GameManager>
 {
     [Header("UI")]
     [SerializeField] private PointToClickPool m_PointToClickPool;
+    [SerializeField] private ActionBar m_ActionBar;
 
     public Unit ActiveUnit;
     private Vector2 m_InitialTouchPosition;
@@ -81,6 +82,7 @@ public class GameManager : SingletonManager<GameManager>
         }
         ActiveUnit = unit;
         ActiveUnit.Select();
+        ShowUnitAction();
     }
     private void DisplayClickEffect(Vector2 worldPoint)
     {
@@ -101,5 +103,10 @@ public class GameManager : SingletonManager<GameManager>
     private bool HasClickedOnActiveUnit(Unit clickedUnit)
     {
         return clickedUnit == ActiveUnit;
+    }
+
+    private void ShowUnitAction()
+    {
+        m_ActionBar.Show();
     }
 }
