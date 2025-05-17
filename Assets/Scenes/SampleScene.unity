@@ -836,7 +836,7 @@ Tilemap:
       - {fileID: -1910491291, guid: 3d716f96cedbfec4c9fe9b12d4da7c20, type: 3}
       - {fileID: -893125274, guid: 3d716f96cedbfec4c9fe9b12d4da7c20, type: 3}
       - {fileID: -163247931, guid: 3d716f96cedbfec4c9fe9b12d4da7c20, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 13, y: 5, z: 0}
@@ -4223,7 +4223,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fad3f8b1704bc4d9232739191fcd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OutlineMaterial: {fileID: 2100000, guid: 1d0402b84e90da044ae776c9482ab599, type: 2}
   isMoving: 0
   isTargeted: 0
 --- !u!114 &362395052
@@ -4563,6 +4562,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99d64954144c1ec428145eec5d99cdda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PointToClickPrefab: {fileID: 7512228069974397123, guid: c40ce35a5d326d342a2abbd43d98d820, type: 3}
   ActiveUnit: {fileID: 0}
 --- !u!4 &1311304912
 Transform:
@@ -6208,7 +6208,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -9, y: -8, z: 0}
@@ -6558,7 +6558,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -5, z: 0}
@@ -6642,7 +6642,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: -2, z: 0}
@@ -15923,7 +15923,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fad3f8b1704bc4d9232739191fcd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_OutlineMaterial: {fileID: 2100000, guid: 1d0402b84e90da044ae776c9482ab599, type: 2}
   isMoving: 0
   isTargeted: 0
 --- !u!114 &2012154118
