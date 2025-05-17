@@ -63,6 +63,14 @@ public class GameManager : SingletonManager<GameManager>
 
     private void HandleClickOnUnit(Unit unit)
     {
+        if (HasActiveUnit)
+        {
+            if (HasClickedOnActiveUnit(unit))
+            {
+                CancelActiveUnit();
+                return;
+            }
+        }
         SelectNewUnit(unit);
     }
     private void SelectNewUnit(Unit unit)
@@ -84,5 +92,14 @@ public class GameManager : SingletonManager<GameManager>
     private bool isHumanoid(Unit unit)
     {
         return unit is HumanoidUnit;
+    }
+    private void CancelActiveUnit()
+    {
+        ActiveUnit.DeSelect();
+        ActiveUnit = null;
+    }
+    private bool HasClickedOnActiveUnit(Unit clickedUnit)
+    {
+        return clickedUnit == ActiveUnit;
     }
 }
