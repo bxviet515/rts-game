@@ -111,6 +111,7 @@ public class GameManager : SingletonManager<GameManager>
     {
         ActiveUnit.DeSelect();
         ActiveUnit = null;
+        ClearAtionBarUI();
     }
     private bool HasClickedOnActiveUnit(Unit clickedUnit)
     {
