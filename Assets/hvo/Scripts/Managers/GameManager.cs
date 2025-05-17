@@ -11,6 +11,9 @@ public class GameManager : SingletonManager<GameManager>
     public Unit ActiveUnit;
     private Vector2 m_InitialTouchPosition;
     public bool HasActiveUnit => ActiveUnit != null;
+    private void Start() {
+        ClearAtionBarUI();
+    }
     private void Update()
     {
         Vector2 inputPosition = Input.touchCount > 0 ? Input.GetTouch(0).position : Input.mousePosition;
@@ -107,6 +110,18 @@ public class GameManager : SingletonManager<GameManager>
 
     private void ShowUnitAction()
     {
+        ClearAtionBarUI();
+        var hardCodedActions = 2;
+        for (int i = 0; i < hardCodedActions; i++)
+        {
+            m_ActionBar.RegisterAction();
+        }
         m_ActionBar.Show();
+    }
+
+    private void ClearAtionBarUI()
+    {
+        m_ActionBar.ClearAction();
+        m_ActionBar.Hide();
     }
 }
