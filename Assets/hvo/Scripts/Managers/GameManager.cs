@@ -94,7 +94,7 @@ public class GameManager : SingletonManager<GameManager>
         }
         ActiveUnit = unit;
         ActiveUnit.Select();
-        ShowUnitAction();
+        ShowUnitAction(unit);
     }
     private void DisplayClickEffect(Vector2 worldPoint)
     {
@@ -118,15 +118,18 @@ public class GameManager : SingletonManager<GameManager>
         return clickedUnit == ActiveUnit;
     }
 
-    private void ShowUnitAction()
+    private void ShowUnitAction(Unit unit)
     {
         ClearAtionBarUI();
-        var hardCodedActions = 2;
-        for (int i = 0; i < hardCodedActions; i++)
+        if (unit.Actions.Length == 0)
+        {
+            return;
+        }
+        m_ActionBar.Show();
+        foreach (var action in unit.Actions)
         {
             m_ActionBar.RegisterAction();
         }
-        m_ActionBar.Show();
     }
 
     private void ClearAtionBarUI()
