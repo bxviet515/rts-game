@@ -128,7 +128,7 @@ public class GameManager : SingletonManager<GameManager>
         m_ActionBar.Show();
         foreach (var action in unit.Actions)
         {
-            m_ActionBar.RegisterAction();
+            m_ActionBar.RegisterAction(action.Icon);
         }
     }
 
