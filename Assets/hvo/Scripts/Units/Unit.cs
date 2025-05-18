@@ -4,7 +4,9 @@ using UnityEngine;
 
 public abstract class Unit : MonoBehaviour
 {
-    
+
+    [SerializeField] private ActionSO[] m_Actions;
+
     public bool isMoving;
     public bool isTargeted;
     protected Animator m_Animator;
@@ -12,6 +14,7 @@ public abstract class Unit : MonoBehaviour
     protected SpriteRenderer m_SpriteRenderer;
     protected Material m_OriginalMaterial;
     protected Material m_HightlightMaterial;
+    public ActionSO[] Actions => m_Actions; 
     protected void Awake()
     {
         if (TryGetComponent<Animator>(out var animator))

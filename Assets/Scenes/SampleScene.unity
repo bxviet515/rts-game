@@ -4223,6 +4223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fad3f8b1704bc4d9232739191fcd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Actions: []
   isMoving: 0
   isTargeted: 0
 --- !u!114 &362395052
@@ -6636,7 +6637,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 0, y: -8, z: 0}
@@ -7028,7 +7029,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 10, y: 1, z: 0}
@@ -16225,6 +16226,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fad3f8b1704bc4d9232739191fcd50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Actions:
+  - {fileID: 11400000, guid: 30e56212184accf40a5244658e8eb883, type: 2}
   isMoving: 0
   isTargeted: 0
 --- !u!114 &2012154118
