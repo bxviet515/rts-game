@@ -136,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IconImage: {fileID: 6904676120038069056}
-  m_ButtonImage: {fileID: 6904676119851570549}
+  m_Button: {fileID: 6904676119851570550}
 --- !u!1 &6904676120038069058
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,6 +34,10 @@ public class GameManager : SingletonManager<GameManager>
             }
         }
     }
+    public void StartBuildProcess(BuildActionSO buildAction)
+    {
+        Debug.Log("Start Build: " + buildAction.name);
+    }
     private void DetechClick(Vector2 inputPosition)
     {
         if (IsPointerOverUIElement())
@@ -128,7 +132,9 @@ public class GameManager : SingletonManager<GameManager>
         m_ActionBar.Show();
         foreach (var action in unit.Actions)
         {
-            m_ActionBar.RegisterAction(action.Icon);
+            m_ActionBar.RegisterAction(
+                action.Icon,
+                () => action.Execute(this));
         }
     }
 
