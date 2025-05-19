@@ -13,9 +13,7 @@ public class GameManager : SingletonManager<GameManager>
     private Vector2 m_InitialTouchPosition;
     private PlacementProcess m_PlacementProcess;
     public bool HasActiveUnit => ActiveUnit != null;
-    public Vector2 InputPosition => Input.touchCount > 0 ? Input.GetTouch(0).position : Input.mousePosition;
-    public bool IsLeftClickOrTapDown => Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began);
-    public bool IsLeftClickOrTapUp => Input.GetMouseButtonUp(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended);
+    
     private void Start()
     {
         ClearAtionBarUI();
@@ -28,15 +26,15 @@ public class GameManager : SingletonManager<GameManager>
         }
         else
         {
-            if (IsLeftClickOrTapDown)
+            if (HvOUtils.IsLeftClickOrTapDown)
             {
-                m_InitialTouchPosition = InputPosition;
+                m_InitialTouchPosition = HvOUtils.InputPosition;
             }
-            if (IsLeftClickOrTapUp)
+            if (HvOUtils.IsLeftClickOrTapUp)
             {
-                if (Vector2.Distance(m_InitialTouchPosition, InputPosition) < 10)
+                if (Vector2.Distance(m_InitialTouchPosition, HvOUtils.InputPosition) < 10)
                 {
-                    DetechClick(InputPosition);
+                    DetechClick(HvOUtils.InputPosition);
                 }
             }
             
