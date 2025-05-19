@@ -9,10 +9,14 @@ public class PlacementProcess
     private BuildActionSO m_BuildActionSO;
     private Vector3Int[] m_HighlightPositions;
     private Tilemap m_WalkableTilemap;
-    public PlacementProcess(BuildActionSO buildAction, Tilemap walkableTilemap)
+    private Tilemap m_OverlayTilemap;
+    private Sprite m_PlaceholderTileSprite;
+    public PlacementProcess(BuildActionSO buildAction, Tilemap walkableTilemap, Tilemap overlayTilemap)
     {
+        m_PlaceholderTileSprite = Resources.Load<Sprite>("Images/PlaceholderTileSprite");
         m_BuildActionSO = buildAction;
         m_WalkableTilemap = walkableTilemap;
+        m_OverlayTilemap = overlayTilemap;
     }
     public void Update()
     {
@@ -52,8 +56,12 @@ public class PlacementProcess
         }
         foreach (var tilePosition in m_HighlightPositions)
         {
-            m_WalkableTilemap.SetTileFlags(tilePosition, TileFlags.None);
-            m_WalkableTilemap.SetColor(tilePosition, Color.green);
+            var tile = ScriptableObject.CreateInstance<Tile>();
+            tile.sprite = m_PlaceholderTileSprite;
+            tile.color = new Color(0, 0.8f, 1, 0.4f);
+            m_OverlayTilemap.SetTile(tilePosition, tile);
+            // m_OverlayTilemap.SetTileFlags(tilePosition, TileFlags.None);
+            // m_OverlayTilemap.SetColor(tilePosition, Color.green);
         }
         
     }
