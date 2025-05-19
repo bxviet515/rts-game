@@ -14,7 +14,7 @@ public class PlacementProcess
     {
         if (HvOUtils.TryGetHoldPosition(out Vector3 worldPosition))
         {
-            m_PlacementOutline.transform.position = new Vector3(worldPosition.x, worldPosition.y, 0);
+            m_PlacementOutline.transform.position = SnapToGrid(worldPosition);
         }
     }
     public void ShowPlacementOutline()
@@ -24,5 +24,9 @@ public class PlacementProcess
         renderder.sortingOrder = 999;
         renderder.color = new Color(1, 1, 1, 0.5f);
         renderder.sprite = m_BuildActionSO.PlacementSprite;
+    }
+    private Vector3 SnapToGrid(Vector3 worldPosition)
+    {
+        return new Vector3(Mathf.FloorToInt(worldPosition.x), Mathf.FloorToInt(worldPosition.y), 0);
     }
 }
