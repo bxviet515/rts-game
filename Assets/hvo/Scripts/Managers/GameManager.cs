@@ -11,6 +11,7 @@ public class GameManager : SingletonManager<GameManager>
 
     public Unit ActiveUnit;
     private Vector2 m_InitialTouchPosition;
+    private PlacementProcess m_PlacementProcess;
     public bool HasActiveUnit => ActiveUnit != null;
     public Vector2 InputPosition => Input.touchCount > 0 ? Input.GetTouch(0).position : Input.mousePosition;
     public bool IsLeftClickOrTapDown => Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began);
@@ -21,22 +22,31 @@ public class GameManager : SingletonManager<GameManager>
     }
     private void Update()
     {
-        Vector2 inputPosition = InputPosition;
-        if (IsLeftClickOrTapDown)
+        if (m_PlacementProcess != null)
         {
-            m_InitialTouchPosition = inputPosition;
+            m_PlacementProcess.Update();
         }
-        if (IsLeftClickOrTapUp)
+        else
         {
-            if (Vector2.Distance(m_InitialTouchPosition, inputPosition) < 10)
+            if (IsLeftClickOrTapDown)
             {
-                DetechClick(inputPosition);
+                m_InitialTouchPosition = InputPosition;
             }
+            if (IsLeftClickOrTapUp)
+            {
+                if (Vector2.Distance(m_InitialTouchPosition, InputPosition) < 10)
+                {
+                    DetechClick(InputPosition);
+                }
+            }
+            
         }
+        
     }
     public void StartBuildProcess(BuildActionSO buildAction)
     {
-        Debug.Log("Start Build: " + buildAction.name);
+        m_PlacementProcess = new PlacementProcess(buildAction);
+        m_PlacementProcess.ShowPlacementOutline();
     }
     private void DetechClick(Vector2 inputPosition)
     {
