@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class PlacementProcess
 {
     private GameObject m_PlacementOutline;
     private BuildActionSO m_BuildActionSO;
     private Vector3Int[] m_HighlightPositions;
-    public PlacementProcess(BuildActionSO buildAction)
+    private Tilemap m_WalkableTilemap;
+    public PlacementProcess(BuildActionSO buildAction, Tilemap walkableTilemap)
     {
         m_BuildActionSO = buildAction;
+        m_WalkableTilemap = walkableTilemap;
     }
     public void Update()
     {
@@ -48,8 +51,9 @@ public class PlacementProcess
         }
         foreach (var tilePosition in m_HighlightPositions)
         {
-            Debug.Log(tilePosition);
+            m_WalkableTilemap.SetTileFlags(tilePosition, TileFlags.None);
+            m_WalkableTilemap.SetColor(tilePosition, Color.green);
         }
-        Debug.Log("-------------");
+        
     }
 }
