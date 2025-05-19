@@ -10,7 +10,7 @@ public class GameManager : SingletonManager<GameManager>
     [SerializeField] private ActionBar m_ActionBar;
 
     public Unit ActiveUnit;
-    private Vector2 m_InitialTouchPosition;
+    
     private PlacementProcess m_PlacementProcess;
     public bool HasActiveUnit => ActiveUnit != null;
     
@@ -24,20 +24,9 @@ public class GameManager : SingletonManager<GameManager>
         {
             m_PlacementProcess.Update();
         }
-        else
+        else if(HvOUtils.TryGetShortClickPosition(out Vector2 inputPosition))
         {
-            if (HvOUtils.IsLeftClickOrTapDown)
-            {
-                m_InitialTouchPosition = HvOUtils.InputPosition;
-            }
-            if (HvOUtils.IsLeftClickOrTapUp)
-            {
-                if (Vector2.Distance(m_InitialTouchPosition, HvOUtils.InputPosition) < 10)
-                {
-                    DetechClick(HvOUtils.InputPosition);
-                }
-            }
-            
+            DetechClick(inputPosition);
         }
         
     }
@@ -48,7 +37,7 @@ public class GameManager : SingletonManager<GameManager>
     }
     private void DetechClick(Vector2 inputPosition)
     {
-        if (IsPointerOverUIElement())
+        if (HvOUtils.IsPointerOverUIElement())
         {
             return;
         }
@@ -152,16 +141,5 @@ public class GameManager : SingletonManager<GameManager>
         m_ActionBar.Hide();
     }
 
-    private bool IsPointerOverUIElement()
-    {
-        if (Input.touchCount > 0)
-        {
-            var touch = Input.GetTouch(0);
-            return EventSystem.current.IsPointerOverGameObject(touch.fingerId);
-        }
-        else
-        {
-            return EventSystem.current.IsPointerOverGameObject();
-        }
-    }
+    
 }
