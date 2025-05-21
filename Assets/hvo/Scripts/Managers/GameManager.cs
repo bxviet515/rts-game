@@ -47,7 +47,7 @@ public class GameManager : SingletonManager<GameManager>
 
         m_PlacementProcess = new PlacementProcess(buildAction, m_WalkableTilemap, m_OverlayTilemap, m_UnreachableTilemaps);
         m_PlacementProcess.ShowPlacementOutline();
-        m_BuildConfirmationBar.Show();
+        m_BuildConfirmationBar.Show(buildAction.GoldCost, buildAction.WoodCost);
         m_BuildConfirmationBar.SetupHooks(ConfirmBuildPlacement, CancelBuildPlacement);
     }
     private void DetechClick(Vector2 inputPosition)
