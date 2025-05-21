@@ -46,6 +46,11 @@ public class PlacementProcess
     {
         return new Vector3(Mathf.FloorToInt(worldPosition.x), Mathf.FloorToInt(worldPosition.y), 0);
     }
+    public void CleanUp()
+    {
+        Object.Destroy(m_PlacementOutline);
+        ClearHighlights();
+    }
 
     private void HighlightTiles(Vector3 outlinePosition)
     {
