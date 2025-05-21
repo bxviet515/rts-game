@@ -13,6 +13,7 @@ public class GameManager : SingletonManager<GameManager>
     [Header("UI")]
     [SerializeField] private PointToClickPool m_PointToClickPool;
     [SerializeField] private ActionBar m_ActionBar;
+    [SerializeField] private ConfirmationBar m_BuildConfirmationBar;
 
     public Unit ActiveUnit;
     
@@ -37,8 +38,11 @@ public class GameManager : SingletonManager<GameManager>
     }
     public void StartBuildProcess(BuildActionSO buildAction)
     {
+        if (m_PlacementProcess != null) return;
+
         m_PlacementProcess = new PlacementProcess(buildAction, m_WalkableTilemap, m_OverlayTilemap, m_UnreachableTilemaps);
         m_PlacementProcess.ShowPlacementOutline();
+        m_BuildConfirmationBar.Show();
     }
     private void DetechClick(Vector2 inputPosition)
     {

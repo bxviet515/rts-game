@@ -5586,6 +5586,7 @@ MonoBehaviour:
   - {fileID: 186482574}
   m_PointToClickPool: {fileID: 1311304913}
   m_ActionBar: {fileID: 1141942447}
+  m_BuildConfirmationBar: {fileID: 1585175625}
   ActiveUnit: {fileID: 0}
 --- !u!4 &1311304912
 Transform:
@@ -6769,7 +6770,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1585175624
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7857,7 +7858,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -8, y: -8, z: 0}
@@ -8431,7 +8432,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: -11, y: 4, z: 0}
@@ -8641,7 +8642,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 2, y: 5, z: 0}
@@ -8725,7 +8726,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10
+      m_AnimationSpeed: 10.000001
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   - first: {x: 8, y: 5, z: 0}
@@ -8767,7 +8768,7 @@ Tilemap:
       - {fileID: -796871558, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 964667656, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
       - {fileID: 2089976207, guid: 8d4803bc9a36d2240a4c58f988442650, type: 3}
-      m_AnimationSpeed: 10.000001
+      m_AnimationSpeed: 10
       m_AnimationTimeOffset: 0
       m_IsLooping: 1
   m_TileAssetArray:
