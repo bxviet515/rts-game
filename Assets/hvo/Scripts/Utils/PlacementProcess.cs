@@ -14,6 +14,9 @@ public class PlacementProcess
     private Sprite m_PlaceholderTileSprite;
     private Color m_HighlightColor = new Color(0, 0.8f, 1, 0.4f);
     private Color m_BlockedColor = new Color(1, 0.2f, 0, 0.8f);
+    public BuildActionSO BuildAction => m_BuildActionSO;
+    public int GoldCost => m_BuildActionSO.GoldCost;
+    public int WoodCost => m_BuildActionSO.WoodCost;
     public PlacementProcess(BuildActionSO buildAction, Tilemap walkableTilemap, Tilemap overlayTilemap, Tilemap[] unreachableTilemaps)
     {
         m_PlaceholderTileSprite = Resources.Load<Sprite>("Images/PlaceholderTileSprite");
