@@ -67,6 +67,10 @@ public class PlacementProcess
     }
 
     private bool IsPlacementAreaValid() {
+        foreach (var tilePosition in m_HighlightPositions)
+        {
+            if (!CanPlaceTile(tilePosition)) return false;
+        }
         return true;
     }
     private void HighlightTiles(Vector3 outlinePosition)
