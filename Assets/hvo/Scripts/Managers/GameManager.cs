@@ -16,10 +16,10 @@ public class GameManager : SingletonManager<GameManager>
     [SerializeField] private ConfirmationBar m_BuildConfirmationBar;
 
     public Unit ActiveUnit;
-    
+
     private PlacementProcess m_PlacementProcess;
     public bool HasActiveUnit => ActiveUnit != null;
-    
+
     private void Start()
     {
         ClearAtionBarUI();
@@ -30,11 +30,11 @@ public class GameManager : SingletonManager<GameManager>
         {
             m_PlacementProcess.Update();
         }
-        else if(HvOUtils.TryGetShortClickPosition(out Vector2 inputPosition))
+        else if (HvOUtils.TryGetShortClickPosition(out Vector2 inputPosition))
         {
             DetechClick(inputPosition);
         }
-        
+
     }
     public void StartBuildProcess(BuildActionSO buildAction)
     {
@@ -43,6 +43,7 @@ public class GameManager : SingletonManager<GameManager>
         m_PlacementProcess = new PlacementProcess(buildAction, m_WalkableTilemap, m_OverlayTilemap, m_UnreachableTilemaps);
         m_PlacementProcess.ShowPlacementOutline();
         m_BuildConfirmationBar.Show();
+        m_BuildConfirmationBar.SetupHooks(ConfirmBuildPlacement, CancelBuildPlacement);
     }
     private void DetechClick(Vector2 inputPosition)
     {
@@ -150,5 +151,13 @@ public class GameManager : SingletonManager<GameManager>
         m_ActionBar.Hide();
     }
 
+    private void ConfirmBuildPlacement()
+    {
+        Debug.Log("ConfirmBuildPlacement");
+    }
     
+    private void CancelBuildPlacement()
+    {
+        Debug.Log("CancelBuildPlacement");
+    }
 }
